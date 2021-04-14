@@ -11,6 +11,6 @@ npx create-react-app nomduprojet
 npm i -s react-dom react-router-dom node-sass@4.14.1
 npm install react react-dom @apollo/client graphql
 
-# Lancer le projet 
+# Lancer le projet
 
 npm start
