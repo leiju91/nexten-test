@@ -14,3 +14,8 @@ npm install react react-dom @apollo/client graphql
 # Lancer le projet
 
 npm start
+
+# Organisation
+
+Les composants sont regroupés dans un dossier 'components' dans des fichiers bien séparés.
+Les fichiers de styles sont regroupés dans un dossier 'styles'.
