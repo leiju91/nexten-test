@@ -19,7 +19,7 @@ const client = new ApolloClient({
   
   // crée un composant qui rend une entrée de sélection pour les langues 
   const Languages = () => {
-    const [lang, setLang] = useState('en');
+    const [lang, setLang] = useState('English');
     const {data, loading, error} = useQuery(LIST_LANGUAGES, {client});
   
     if (loading || error) {
@@ -28,7 +28,7 @@ const client = new ApolloClient({
     
     // création du select
     return (
-      <select value={lang} onChange={event => setLang(event.target.value)}>
+      <select value={lang} id="lang-select" onChange={event => setLang(event.target.value)}>
         {data.languages.map(lang => (
           <option key={lang.name} value={lang.name}>
             {lang.name}

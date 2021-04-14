@@ -28,13 +28,14 @@ const client = new ApolloClient({
     
     // création du select
     return (
-      <select value={country} onChange={event => setCountry(event.target.value)}>
+            
+      <select value={country} id="country-select" onChange={event => setCountry(event.target.value)}>
         {data.countries.map(country => (
           <option key={country.code} value={country.code}>
             {country.name}
           </option>
         ))}
-      </select>
+      </select>    
     );
   };
 

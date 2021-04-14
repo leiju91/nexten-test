@@ -7,7 +7,7 @@ const client = new ApolloClient({
     uri: 'https://countries.trevorblades.com'
   });
   
-  // écrire une requête GraphQL qui demande des noms et des codes pour toutes les langues
+  // écrire une requête GraphQL qui demande des noms et des codes pour tous les continents
   const LIST_CONTINENTS = gql`
     {
       continents {
@@ -16,9 +16,9 @@ const client = new ApolloClient({
     }
   `;
   
-  // crée un composant qui rend une entrée de sélection pour les langues 
+  // crée un composant qui rend une entrée de sélection pour les continents
   const Continents = () => {
-    const [cont, setCont] = useState('NA');
+    const [cont, setCont] = useState('North America');
     const {data, loading, error} = useQuery(LIST_CONTINENTS, {client});
   
     if (loading || error) {
@@ -27,7 +27,7 @@ const client = new ApolloClient({
     
     // création du select
     return (
-      <select value={cont} onChange={event => setCont(event.target.value)}>
+      <select value={cont} id="continents-select" onChange={event => setCont(event.target.value)}>
         {data.continents.map(cont => (
           <option key={cont.name} value={cont.name}>
             {cont.name}
